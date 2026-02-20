@@ -3,13 +3,18 @@ namespace ForTask
 {
     public class Logic
     {
-        public static void Filling(int length)
+        public static List<float> FindBiggest(int length, float[] floatMassive)
         {
-            float[] floatMassive = new float[length];
-        }
-        public static void FindBiggest(int length)
-        {
+            var countFloat = new List<float>();
 
+            for (int i = 1; i < length - 1; i++)
+            {
+                if (floatMassive[i] > floatMassive[i - 1] && floatMassive[i] > floatMassive[i + 1])
+                {
+                    countFloat.Add(floatMassive[i]);
+                }
+            }
+            return countFloat;
         }
     }
     internal class Program
@@ -24,15 +29,7 @@ namespace ForTask
                 floatMassive[i] = float.Parse(Console.ReadLine());
             }
 
-            var countFloat = new List<float>();
-
-            for (int i = 1; i < length - 1; i++)
-            {
-                if (floatMassive[i] > floatMassive[i - 1] && floatMassive[i] > floatMassive[i + 1])
-                {
-                    countFloat.Add(floatMassive[i]);
-                }
-            }
+            var countFloat = Logic.FindBiggest(length, floatMassive);
 
             Console.WriteLine("Количество элементов больше соседей: " + countFloat.Count());
             Console.WriteLine("Элементы больше соседей");
