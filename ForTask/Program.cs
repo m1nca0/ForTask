@@ -3,18 +3,18 @@ namespace ForTask
 {
     public class Logic
     {
-        public static List<float> FindBiggest(int length, float[] floatMassive)
+        public static List<double> FindBiggest(int length, double[] doubleMassive)
         {
-            var countFloat = new List<float>();
+            var countdouble = new List<double>();
 
             for (int i = 1; i < length - 1; i++)
             {
-                if (floatMassive[i] > floatMassive[i - 1] && floatMassive[i] > floatMassive[i + 1])
+                if (doubleMassive[i] > doubleMassive[i - 1] && doubleMassive[i] > doubleMassive[i + 1])
                 {
-                    countFloat.Add(floatMassive[i]);
+                    countdouble.Add(doubleMassive[i]);
                 }
             }
-            return countFloat;
+            return countdouble;
         }
     }
     internal class Program
@@ -23,18 +23,18 @@ namespace ForTask
         {
             Console.WriteLine("Введите количество элементов последовательности: ");
             int length = int.Parse(Console.ReadLine());
-            float[] floatMassive = new float[length];
+            double[] doubleMassive = new double[length];
             for (int i = 0; i < length; i++) { 
-                Console.WriteLine("floatMassive[" + (i + 1) + "] = ");
-                floatMassive[i] = float.Parse(Console.ReadLine());
+                Console.WriteLine("doubleMassive[" + (i + 1) + "] = ");
+                doubleMassive[i] = double.Parse(Console.ReadLine());
             }
 
-            var countFloat = Logic.FindBiggest(length, floatMassive);
+            var countdouble = Logic.FindBiggest(length, doubleMassive);
 
-            Console.WriteLine("Количество элементов больше соседей: " + countFloat.Count());
+            Console.WriteLine("Количество элементов больше соседей: " + countdouble.Count());
             Console.WriteLine("Элементы больше соседей");
-            for (int i = 0; i < countFloat.Count; i++) {
-                Console.WriteLine(countFloat[i]);
+            for (int i = 0; i < countdouble.Count; i++) {
+                Console.WriteLine(countdouble[i]);
             }
         }   
     }
