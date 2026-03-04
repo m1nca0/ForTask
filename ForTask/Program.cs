@@ -3,7 +3,7 @@ namespace ForTask
 {
     public class Logic
     {
-        public static List<double> FindBiggest(int length, double[] doubleMassive)
+        public static List<double> CreateArrayNeighbors(int length, double[] doubleMassive)
         {
             var countdouble = new List<double>();
 
@@ -29,7 +29,7 @@ namespace ForTask
                 doubleMassive[i] = double.Parse(Console.ReadLine());
             }
 
-            var countdouble = Logic.FindBiggest(length, doubleMassive);
+            var countdouble = Logic.CreateArrayNeighbors(length, doubleMassive);
 
             Console.WriteLine("Количество элементов больше соседей: " + countdouble.Count());
             Console.WriteLine("Элементы больше соседей");
